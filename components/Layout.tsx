@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Nav from './Nav';
 
-const Layout = ({ children }: { children: React.ReactNode}) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
