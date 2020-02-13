@@ -58,6 +58,7 @@ export function withApollo(PageComponent: NextPage) {
       // Clearning manually since component won't unmount from await get data tree
       Head.rewind();
     };
+    // Craetes a peige
 
     const apolloState = apolloClient.cache.extract();
     return {

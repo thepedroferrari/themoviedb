@@ -7,9 +7,7 @@ const links = [
   { href: '/', label: 'Home', key: 'navlink-home' },
   { href: '/about', label: 'About', key: 'navlink-about' }
 ]
-
-const Nav = () => {
-  const NavList = styled.ul`
+const NavList = styled.ul`
     list-style: none;
     display: grid;
     grid-template-columns: repeat(${links.length}, min-content);
@@ -26,6 +24,9 @@ const Nav = () => {
       }
     }
   `;
+
+const Nav = () => {
+
   return (
     <nav>
       <NavList>
