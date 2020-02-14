@@ -3,8 +3,10 @@ import Workout from './Workout';
 
 import WorkoutForm from './WorkoutForm';
 
-
-const WorkoutList = () => {
+interface Props {
+  workouts: (string | number)[][];
+}
+const WorkoutList = ({workouts}: Props) => {
   return (
     <section>
       <h2>My Workouts</h2>

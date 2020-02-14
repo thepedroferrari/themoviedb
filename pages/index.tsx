@@ -13,8 +13,8 @@ const HOME_QUERY = gql`
 `
 
 const Home = () => {
-
   const { data, loading, error } = useQuery(HOME_QUERY);
+  const [workouts, setWorkouts] = useState([['Bench Press', 5, 120], ['Sit Up', 25, 60]]);
 
   if (loading) return <div>Loading...</div>
 
@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <Layout>
       <h1>Hello world!</h1>
-      <WorkoutList />
+      <WorkoutList workouts={workouts} />
     </Layout>
   )
 }
