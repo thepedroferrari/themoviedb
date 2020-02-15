@@ -12,11 +12,16 @@ export type Workout = {
 interface Props {
   workouts: Workout[];
 }
-const WorkoutList = ({workouts}: Props) => {
+const WorkoutList = ({ workouts }: Props) => {
   return (
     <section>
       <h2>My Workouts</h2>
-      {workouts.map((workout, i) => <WorkoutItem key={`${workout.exercise}-${i}`} workout={workout}/>)}
+      {workouts.map((workout, i) =>
+        <WorkoutItem
+          key={`${workout.exercise}-${i}`}
+          workout={workout}
+        />
+      )}
 
     </section>
   )

@@ -10,7 +10,7 @@ const WorkoutButton = () => {
   const [complete, setComplete] = useState(false);
   return (
     <Button onClick={() => setComplete(!complete)}>
-      {complete ? 'X' : 'O'}
+      {complete ? 'Completed' : 'Pending'}
     </Button>
   )
 }

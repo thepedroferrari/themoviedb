@@ -13,8 +13,6 @@ const WorkoutItem = ({ workout }: { workout: Workout }) => {
         <li>
           <strong>reps: </strong> {workout.reps}
         </li>
-
-
         <WorkoutButton />
       </ul>
     </article>

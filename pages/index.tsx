@@ -37,8 +37,9 @@ const Home = () => {
   return (
     <Layout>
       <h1>Hello world!</h1>
-      <WorkoutForm onSubmit={({ weight }) => {
-        console.log(weight)
+      <WorkoutForm onSubmit={(workout: Workout) => {
+        setWorkouts([...workouts, workout])
+        localStorage.setItem("workouts", JSON.stringify(workouts));
       }} />
       <WorkoutList workouts={workouts} />
     </Layout>
