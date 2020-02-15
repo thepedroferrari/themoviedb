@@ -1,20 +1,24 @@
 import WorkoutButton from './WorkoutButton';
+import { Workout } from '../components/WorkoutList'
 
-const Workout = () => {
+const WorkoutItem = ({ workout }: { workout: Workout }) => {
   return (
     <article>
-      <h3>Workout Title</h3>
-      <div>
+      <h3>{workout.exercise}</h3>
+      <ul>
+        <li>
+          <strong>weight: </strong> {workout.weight}{workout.unit && workout.unit}
+        </li>
+
+        <li>
+          <strong>reps: </strong> {workout.reps}
+        </li>
+
+
         <WorkoutButton />
-        <WorkoutButton />
-        <WorkoutButton />
-        <WorkoutButton />
-        <WorkoutButton />
-        <WorkoutButton />
-        <WorkoutButton />
-      </div>
+      </ul>
     </article>
   )
 };
 
-export default Workout;
+export default WorkoutItem;

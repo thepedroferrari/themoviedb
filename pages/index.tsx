@@ -3,7 +3,8 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 import Layout from '../components/Layout';
-import WorkoutList from '../components/WorkoutList'
+import WorkoutForm from '../components/WorkoutForm'
+import WorkoutList, { Workout } from '../components/WorkoutList'
 import { withApollo } from '../lib/apollo';
 
 const HOME_QUERY = gql`
@@ -14,7 +15,20 @@ const HOME_QUERY = gql`
 
 const Home = () => {
   const { data, loading, error } = useQuery(HOME_QUERY);
-  const [workouts, setWorkouts] = useState([['Bench Press', 5, 120], ['Sit Up', 25, 60]]);
+  const [workouts, setWorkouts] = useState <Workout[]>([
+    {
+      exercise: 'Bench Press',
+      reps: 5,
+      weight: 120,
+      unit: 'kg'
+    },
+    {
+      exercise: 'Push Up',
+      reps: 50,
+      weight: 0
+    }
+  ]);
+
 
   if (loading) return <div>Loading...</div>
 
@@ -23,6 +37,9 @@ const Home = () => {
   return (
     <Layout>
       <h1>Hello world!</h1>
+      <WorkoutForm onSubmit={({ weight }) => {
+        console.log(weight)
+      }} />
       <WorkoutList workouts={workouts} />
     </Layout>
   )
